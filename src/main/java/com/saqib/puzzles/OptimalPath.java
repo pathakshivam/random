@@ -63,7 +63,13 @@ public class OptimalPath {
 			}
 			if (grid[0].length == 1) {
 				int [][] newGrid = new int[1][1];
-				newGrid[0][0] = grid[0][0];
+				newGrid[0][0] = grid[0][0]; 
+				//I dont' think this condition is correct. Or you might have missed changing the code post you debug. 
+				// In case input is : 
+				// { {0},{5},{2} }
+				// This code will skip 5 and output will be 2. 
+				// Edited Code :
+				//newGrid[0][0] = grid[grid.length-2][0]; 
 				return total += calculateOptimalPath(newGrid);
 			}
 			else {
